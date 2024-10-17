@@ -26,6 +26,6 @@ jobs:
 
       - name: Deploy to VM
         run: |
-          scp -o StrictHostKeyChecking=no -r ./dist/ oguzhankayapinar@<VM_IP>:~/frontend  # IP'yi düzenleyin
+          scp -o StrictHostKeyChecking=no -r ./dist/ oguzhankayapinar@34.69.56.249:~/frontend
         env:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }} 
