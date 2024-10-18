@@ -40,7 +40,7 @@ export default {
   methods: {
     async fetchTodos() {
       try {
-        const response = await fetch('http://34.69.56.249:8080/todos');
+        const response = await fetch('http://localhost:8080/todos');
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
@@ -63,7 +63,7 @@ export default {
             completed: false,
           };
 
-          const response = await fetch(`http://34.69.56.249:8080/todos/${this.editingTodo}`, {
+          const response = await fetch(`http://localhost:8080/todos/${this.editingTodo}`, {
             method: 'PUT',
             headers: {
               'Content-Type': 'application/json',
@@ -83,7 +83,7 @@ export default {
           this.editingTodo = null; 
         } else {
        
-          const response = await fetch('http://34.69.56.249:8080/todos', {
+          const response = await fetch('http://localhost:8080/todos', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
@@ -110,7 +110,7 @@ export default {
     
     async deleteTodo(id) {
       try {
-        const response = await fetch(`http://34.69.56.249:8080/todos/${id}`, {
+        const response = await fetch(`http://localhost:8080/todos/${id}`, {
           method: 'DELETE',
         });
 
@@ -138,7 +138,7 @@ export default {
 
     async updateTodo(todo) {
       try {
-        const response = await fetch(`http://34.69.56.249:8080/todos/${todo.id}`, {
+        const response = await fetch(`http://localhost:8080/todos/${todo.id}`, {
           method: 'PUT',
           headers: {
             'Content-Type': 'application/json',
